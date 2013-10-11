@@ -1,0 +1,8 @@
+%article.gif_body
+  = link_to gif_path(gif) do
+    = image_tag gif.url, alt: gif.title
+.gif_secondary
+  = link_to gif_path(gif), class: 'heading' do
+    %h2= gif.title
+  .social
+    = render 'social/share', gif: gif

@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title= "Giffare - #{title}"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    - if @gif
+      %meta{property: "og:image", content: @gif.url}
+  %body
+    = render 'social/facebook_integration'
+    #main_header
+      .content
+        .random_button
+          = link_to "I'm feeling lucky!", random_gifs_path, class: 'big_button'
+        %h1
+          = link_to "Giffare.com", root_url
+    .content
+      = yield
+      #loading_indicator.user_message
+        Loading more awesome gifs...
+      #no_moar.user_message
+        IMPRESSIVE: You have seen all the gifs now!
+        = link_to "Giffare on twitter", 'http://twitter.com/gifgiraffe'
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-4264346-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

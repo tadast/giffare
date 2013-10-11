@@ -1,0 +1,18 @@
+!!! XML
+%urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
+  %url
+    %loc= root_url
+    %lastmod= @gifs.last.updated_at.strftime "%Y-%m-%d"
+    %changefreq daily
+    %priority 0.3
+  - for i in (2..@gifs.size/Gif.default_per_page) do
+    %url
+      %loc= gifs_url(page: i)
+      %lastmod= @gifs.last.updated_at.strftime "%Y-%m-%d"
+      %changefreq daily
+      %priority 0.3
+  - for gif in @gifs
+    %url
+      %loc= gif_url gif
+      %lastmod= gif.updated_at.strftime "%Y-%m-%d"
+      %changefreq yearly

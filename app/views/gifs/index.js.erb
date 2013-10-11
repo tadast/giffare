@@ -1,0 +1,5 @@
+<%- if gifs.size > 0 %>
+  $("#gifs").append("<%= escape_javascript(render(gifs)) %>");
+<%- else %>
+  $("#no_moar").show()
+<%- end %>

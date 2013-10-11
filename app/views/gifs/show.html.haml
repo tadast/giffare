@@ -1,0 +1,16 @@
+= render "shared/ad"
+.page.clearfix[gif]
+  %article.gif_body
+    = image_tag gif.url
+  .gif_secondary
+    = link_to gif_path(gif), class: 'heading' do
+      %h2= gif.title
+    .social
+      = render 'social/share', gif: gif
+    %nav.show
+      = link_to "«", gif_path(@prev_gif), rel: 'prev', class: 'prev', title: 'Previous'
+      = link_to "↻", random_gifs_path, class: 'random', title: 'Random'
+      = link_to "»", gif_path(@next_gif), rel: 'next', class: 'next', title: 'Next'
+.comments.clearfix
+  %h3 Comments
+  .fb-comments{"data-href" => url_for(:only_path => false), "data-num-posts" => "20", "data-width" => "600"}

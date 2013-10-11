@@ -1,0 +1,13 @@
+#bulk_edit
+  - gifs.each do |gif|
+    .editable_gif
+      .hidden.done
+        Išsaugota
+        = link_to "Peržiūrėti", gif_path(gif), target: "_blank"
+        = link_to image_tag('tweet.png'), "https://twitter.com/share?text=#{gif.title.gsub(/ /, '+')}&url=#{CGI.escape gif_url(gif)}", class: 'tweet_button', target: :blank
+      = render "form", gif: gif, remote: true
+      -# = button_to 'Delete', gif, method: :delete, remote: true, confirm: 'U sure?'
+  .editable_gif
+    = link_to "Perkrauti", unpublished_gifs_path
+    |
+    = link_to "Importuoti daugiau", import_gifs_path(admin: true)
