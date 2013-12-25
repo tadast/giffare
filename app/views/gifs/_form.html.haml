@@ -2,7 +2,8 @@
   - if gif.persisted?
     %h3= gif.title
     %br
-    = image_tag gif.directified_url
+    = image_tag gif.directified_url, class: 'preview'
+    %p= gif.url
   %br
   = form_for gif, remote: remote do |f|
     = f.text_field :title, placeholder: 'title'

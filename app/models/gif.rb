@@ -42,8 +42,8 @@ class Gif < ActiveRecord::Base
   end
 
   def directified_url
-    if url.match(/imgur\.com\/\w+$/)
-      url.gsub(/imgur/, 'i.imgur') + '.gif'
+    if url.match(/imgur\.com\/(gallery\/)?\w+$/)
+      url.gsub(/gallery\//, '').gsub(/imgur/, 'i.imgur') + '.gif'
     else
       url
     end

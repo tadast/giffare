@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe Gif do
   describe "#directified_url" do
+    it 'converts one-image galleries to direct urls' do
+      gif = Gif.new url: 'http://imgur.com/gallery/kSf6ITQ'
+      gif.directified_url.should eq 'http://i.imgur.com/kSf6ITQ.gif'
+    end
+
     it 'converts imgur page urls to direct urls' do
       gif = Gif.new url: 'http://imgur.com/JvAod'
       gif.directified_url.should eq 'http://i.imgur.com/JvAod.gif'
