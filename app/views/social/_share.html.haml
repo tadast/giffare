@@ -2,4 +2,5 @@
 
 .fb-like{"data-font" => "arial", "data-href" => gif_url(gif), "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "70"}
 
-= link_to "Link", gif_url(gif)
+%a{href: "https://plus.google.com/share?url=#{gif_url(gif)}", onclick: "javascript:window.open(this.href,\r\n  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"}
+  = image_tag "gplus.png", title: "Share on Google+", width: "66px", height: "24px"
