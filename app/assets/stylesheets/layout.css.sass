@@ -11,7 +11,7 @@ $width-threshold: 800px
 
 .random_button
   float: right
-  margin-top: 12px
+  margin-top: 8px
 
 .fb-comments
   padding: 20px 3%
@@ -57,9 +57,23 @@ form
   .ad
     width: 728px
     margin: auto
+
 @media only screen and (max-device-width: #{$device-width-threshold}), screen and (max-width: #{$width-threshold})
   #content
     width: 90%
     margin: 0 5%
   .gif_body, .gif_secondary
     width: 100%
+    float: none
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+
+@media only screen and (max-width: 600px)
+  #main_header
+    padding: 0.5em
+    h1
+      font-size: 12px
+      text-align: center
+  .random_button
+    display: none
