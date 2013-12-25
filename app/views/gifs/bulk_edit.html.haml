@@ -8,6 +8,6 @@
       = render "form", gif: gif, remote: true
       -# = button_to 'Delete', gif, method: :delete, remote: true, confirm: 'U sure?'
   .editable_gif
-    = link_to "Perkrauti", unpublished_gifs_path
+    = link_to "Next batch", unpublished_gifs_path
     |
-    = link_to "Importuoti daugiau", import_gifs_path(admin: true)
+    = link_to "Import more", import_gifs_path(admin: true)
