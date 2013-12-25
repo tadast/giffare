@@ -1,4 +1,4 @@
-= link_to image_tag('tweet.png'), "https://twitter.com/share?text=#{gif.title.gsub(/ /, '+')}&url=#{CGI.escape gif_url(gif)}", class: 'tweet_button', target: :blank
+= link_to image_tag('tweet.png', width: "66px", height: "24px"), "https://twitter.com/share?text=#{gif.title.gsub(/ /, '+')}&url=#{CGI.escape gif_url(gif)}", class: 'tweet_button', target: :blank
 
 .fb-like{"data-font" => "arial", "data-href" => gif_url(gif), "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "70"}
 
