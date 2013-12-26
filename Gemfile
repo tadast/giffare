@@ -12,17 +12,18 @@ gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass'
-  gem 'sass-rails'
-  gem 'coffee-rails'
+gem 'sass'
+gem 'sass-rails'
+gem 'coffee-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', :platform => :ruby
 
-  gem 'uglifier'
+gem 'uglifier'
+
+group :production do
+  gem 'rails_12factor'
 end
-
 
 group :development do
   gem 'heroku'
