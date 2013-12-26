@@ -1,4 +1,5 @@
 #bulk_edit
+  = paginate gifs
   - gifs.each do |gif|
     .editable_gif
       .hidden.done
@@ -7,6 +8,7 @@
         = link_to image_tag('tweet.png'), "https://twitter.com/share?text=#{gif.title.gsub(/ /, '+')}&url=#{CGI.escape gif_url(gif)}", class: 'tweet_button', target: :blank
       = render "form", gif: gif, remote: true
       -# = button_to 'Delete', gif, method: :delete, remote: true, confirm: 'U sure?'
+  = paginate gifs
   .editable_gif
     = link_to "Next batch", unpublished_gifs_path
     |
