@@ -27,6 +27,14 @@ end
 group :development do
   gem 'heroku'
 end
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "pry-rails"
+  gem "quiet_assets"
+end
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -46,7 +54,6 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "jquery-rails"
 gem 'jquery-ui-rails', '~> 0.4.0'
-gem "rspec-rails", :group => [:development, :test]
 gem 'kaminari'
 gem 'rest-client'
 gem 'json'
