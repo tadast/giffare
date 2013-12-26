@@ -13,7 +13,9 @@ jQuery( ->
         loading_indicator.show()
         page++
         $.ajax
-          url: "/gifs?page=" + page
+          url: location.pathname
+          data:
+            page: page
           type: "get"
           dataType: "script"
           success: ->
