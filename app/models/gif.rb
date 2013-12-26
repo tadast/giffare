@@ -1,16 +1,15 @@
 class Gif < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :title, :url, :nsfw, :published_at, :hidden
   validates_uniqueness_of :url
   paginates_per 4
 
-  scope :unpublished, where(published_at: nil)
-  scope :published, where("published_at is NOT ?", nil).where('hidden is ? or hidden = ?', nil, false)
-  scope :sfw, where('nsfw is ? or nsfw = ?', nil, false)
-  scope :nsfw, where(nsfw: true)
-  scope :visible, published.sfw
-  scope :random, order('random()')
-  scope :ordered, order('published_at DESC').order('created_at DESC').order('id DESC')
+  scope :unpublished, ->{ where(published_at: nil) }
+  scope :published, ->{ where("published_at is NOT ?", nil).where('hidden is ? or hidden = ?', nil, false) }
+  scope :sfw, ->{ where('nsfw is ? or nsfw = ?', nil, false) }
+  scope :nsfw, ->{ where(nsfw: true) }
+  scope :visible, ->{ published.sfw }
+  scope :random, ->{ order('random()') }
+  scope :ordered, ->{ order('published_at DESC').order('created_at DESC').order('id DESC') }
 
   def prev
     Gif.visible.order(:id).where("id > ?", id).first || Gif.visible.order(:id).first
@@ -21,7 +20,8 @@ class Gif < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{title.downcase.gsub(/[^a-zA-Z0-9]+/, '-').gsub(/-{2,}/, '-').gsub(/^-|-$/, '')}"
+    return super unless persisted?
+    "#{id}-#{title.to_s.downcase.gsub(/[^a-zA-Z0-9]+/, '-').gsub(/-{2,}/, '-').gsub(/^-|-$/, '')}"
   end
 
   def self.pick_random
@@ -42,7 +42,7 @@ class Gif < ActiveRecord::Base
   end
 
   def directified_url
-    if url.match(/imgur\.com\/(gallery\/)?\w+$/)
+    if url.to_s.match(/imgur\.com\/(gallery\/)?\w+$/)
       url.gsub(/gallery\//, '').gsub(/imgur/, 'i.imgur') + '.gif'
     else
       url

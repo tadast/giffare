@@ -5,8 +5,12 @@ Listofgifs::Application.routes.draw do
       get :import
       get :random
       get :nsfw
-      get :unpublished
-      get :nsfw_unpublished
+    end
+  end
+
+  resources :unpublished_gifs do
+    collection do
+      get :nsfw
     end
   end
 

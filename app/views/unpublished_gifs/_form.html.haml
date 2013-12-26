@@ -1,11 +1,13 @@
 .page
+  - action = :create
   - if gif.persisted?
+    - action = :update
     %h3= gif.title
     %br
     = image_tag gif.directified_url, class: 'preview'
     %p= gif.url
   %br
-  = form_for gif, remote: remote do |f|
+  = form_for gif, remote: remote, url: { controller: :unpublished_gifs, action: action, id: gif.id } do |f|
     = f.text_field :title, placeholder: 'title'
     %br
     = f.text_field :url, placeholder: 'url', value: gif.directified_url
