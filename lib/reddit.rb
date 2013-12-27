@@ -1,16 +1,13 @@
 class Reddit
   class Filter
     USEFUL_PARAMS = %w[title score over_18 is_self url]
+
     def initialize(raw)
       @raw = raw
     end
 
     def useful
-      data.map{ |post|
-        post['data'].select{ |k, _|
-          USEFUL_PARAMS.include? k
-        }
-      }
+      data.map{ |p| p['data'].slice(*USEFUL_PARAMS) }
     end
 
     def data
@@ -82,18 +79,19 @@ class Reddit
   end
 
   def top
-    response = RestClient.get url('/top')
-    params = Filter.new(response).useful
-    Converter.new(params).to_giflist_params
+    to_giflist_params(RestClient.get(url('/top')))
   end
 
   def front
-    response = RestClient.get url('')
-    params = Filter.new(response).useful
-    Converter.new(params).to_giflist_params
+    to_giflist_params(RestClient.get(url('')))
   end
 
 private
+
+  def to_giflist_params(response)
+    params = Filter.new(response).useful
+    Converter.new(params).to_giflist_params
+  end
 
   def url(type)
     "#{BASE_URL}#{@subreddit}#{type}.json"

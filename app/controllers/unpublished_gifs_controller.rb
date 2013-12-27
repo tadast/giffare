@@ -46,6 +46,16 @@ class UnpublishedGifsController < ApplicationController
     end
   end
 
+  def empty_trash
+    Gif.in_trash.delete_all
+    redirect_to :back
+  end
+
+  def delete_all
+    Gif.unpublished.delete_all
+    redirect_to :back
+  end
+
 private
   def gif_params
     params.require(:gif).permit(:title, :url, :nsfw, :published_at, :hidden)

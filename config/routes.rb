@@ -11,6 +11,8 @@ Listofgifs::Application.routes.draw do
   resources :unpublished_gifs do
     collection do
       get :nsfw
+      delete :empty_trash
+      delete :delete_all
     end
   end
 

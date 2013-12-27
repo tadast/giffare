@@ -13,3 +13,7 @@
     = link_to "Next batch", unpublished_gifs_path
     |
     = link_to "Import more", import_gifs_path(admin: true)
+    |
+    = link_to "Empty trash", empty_trash_unpublished_gifs_path, method: :delete, data: { confirm: "Are you sure?" }
+    |
+    = link_to "Delete all unpublished", delete_all_unpublished_gifs_path, method: :delete, data: { confirm: "Are you sure?" }
