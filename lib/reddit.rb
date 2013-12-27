@@ -56,12 +56,12 @@ class Reddit
     end
 
     def title
-      rh['title'].gsub(/x-post(.)*/i, '')[0..254]
+      rh['title'].gsub(/\(.*\)/i, '').gsub(/\[.*\]/i, '')[0..254]
     end
 
     def no_autopublish?
       @no_autopublish ||= begin
-        [/reddit/i, /i thought/i, /r\//i, /upvot/i, /downvot/i, /repost/i, /karma/i, /frontpage/i, /front page/i, /cake day/i].any? do |pattern|
+        [/reddit/i, /i thought/i, /r\//i, /upvot/i, /downvot/i, /repost/i, /karma/i, /frontpage/i, /front page/i, /cake day/i, /xpost/i].any? do |pattern|
           rh['title'].match(pattern)
         end || rh['title'].size > 255 || rh['score'].to_i < 40
       end
