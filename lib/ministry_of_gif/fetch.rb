@@ -23,7 +23,7 @@ module MinistryOfGif
 
     def original_gif_urls
       nok_html = Nokogiri.HTML(html)
-      nok_html.search(".inline-tweet-media").first(@limit).map{|i| i.attributes['src'].to_s }
+      nok_html.search(".inline-tweet-media").first(@limit).compact.map{|i| i.attributes['src'].to_s }
     end
 
     def html
