@@ -30,10 +30,9 @@ class Reddit
 private
 
   def best_urls
-    @best_urls ||= all.sort_by{ |h|
-      h["score"]
-    }.last(4)
-    .map{ |h| h['url'] }
+    @best_urls ||= all.select{ |h|
+      h["score"].to_i >= 1000
+    }.map{ |h| h['url'] }
   end
 
   def persisted_sharable_gifs
