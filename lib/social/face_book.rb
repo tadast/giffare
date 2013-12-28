@@ -15,29 +15,17 @@ module Social
       if @link.present?
         puts "FB: ---\n#{@title}, #{@link}\n---"
         page.feed!(
-          access_token: giffare_account.access_token,
+          access_token: ENV['FB_PAGE_ACCESS_TOKEN'],
           message: @title || "New gif",
           link: @link,
           description: @title || "New gif")
       end
     end
 
-    def page
-      @page ||= FbGraph::Page.new(giffare_account.identifier)
-    end
-
   private
 
-    def giffare_account
-      @giffare_account ||= admin.accounts.select{ |a| a.name.match(/giffare/i) }.first
-    end
-
-    def admin
-      @admin ||= begin
-        user = FbGraph::User.me(ENV['FB_ACCESS_TOKEN'])
-        user.fetch
-        user
-      end
+    def page
+      @page ||= FbGraph::Page.new(ENV['FB_PAGE_ID'])
     end
   end
 end
