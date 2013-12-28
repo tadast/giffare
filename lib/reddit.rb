@@ -1,99 +1,50 @@
 class Reddit
-  class Filter
-    USEFUL_PARAMS = %w[title score over_18 is_self url]
+  DEFAULTS = [
+    OpenStruct.new(name: 'gifs', section: ''),
+    OpenStruct.new(name: 'gifs', section: '/top'),
+    OpenStruct.new(name: 'AnimalsBeingJerks', section: '/top'),
+  ]
+  def initialize(subreddits: DEFAULTS)
+    @subreddits = subreddits
+  end
 
-    def initialize(raw)
-      @raw = raw
-    end
+  def import
+    persist
+    share_best
+  end
 
-    def useful
-      data.map{ |p| p['data'].slice(*USEFUL_PARAMS) }
-    end
-
-    def data
-      @data ||= JSON.parse(@raw)['data']['children']
+  def persist
+    @persisted ||= begin
+      attrs = Converter.new(all).giffare_attributes
+      Gif.create(attrs)
     end
   end
 
-  class Converter
-    def initialize(reddit_hash)
-      @reddit_hash = reddit_hash
-    end
-
-    def to_giflist_params
-      @reddit_hash.map do |rh|
-        GifListEntry.new(rh).to_h
-      end.compact
-    end
-  end
-
-  class GifListEntry
-    def initialize(reddit_hash)
-      @reddit_hash = reddit_hash
-    end
-
-    def to_h
-      return if rejectable?
-      {
-        nsfw: nsfw,
-        title: title,
-        url: url,
-        published_at: (no_autopublish? ? nil : Time.now.to_s)
-      }
-    end
-  private
-    def nsfw
-      rh['over_18'] || rh['title'].to_s.downcase.match(/nsfw|nsfl/)
-    end
-
-    def url
-      url = rh['url']
-      @no_autopublish = true unless url.match(/\.gif$/)
-      url
-    end
-
-    def title
-      rh['title'].gsub(/\(.*\)/i, '').gsub(/\[.*\]/i, '')[0..254]
-    end
-
-    def no_autopublish?
-      @no_autopublish ||= begin
-        [/reddit/i, /i thought/i, /r\//i, /upvot/i, /downvot/i, /repost/i, /karma/i, /frontpage/i, /front page/i, /cake day/i, /xpost/i].any? do |pattern|
-          rh['title'].match(pattern)
-        end || rh['title'].size > 255 || rh['score'].to_i < 40
-      end
-    end
-
-    def rejectable?
-      rh['url'].match(/youtube|liveleak/) || rh['url'].match(/jpg$/)  || rh['url'].match(/png$/)
-    end
-
-    def rh
-      @reddit_hash
-    end
-  end
-
-  BASE_URL = "http://www.reddit.com/r/"
-  def initialize(subreddit)
-    @subreddit = subreddit
-  end
-
-  def top
-    to_giflist_params(RestClient.get(url('/top')))
-  end
-
-  def front
-    to_giflist_params(RestClient.get(url('')))
+  def share_best
+    shareable = persisted_sharable_gifs.select{ |gif|
+      gif.url.in? best_urls
+    }
+    Social.share(shareable)
   end
 
 private
 
-  def to_giflist_params(response)
-    params = Filter.new(response).useful
-    Converter.new(params).to_giflist_params
+  def best_urls
+    @best_urls ||= all.sort_by{ |h|
+      h["score"]
+    }.last(4)
+    .map{ |h| h['url'] }
   end
 
-  def url(type)
-    "#{BASE_URL}#{@subreddit}#{type}.json"
+  def persisted_sharable_gifs
+    persist.reject{ |gif|
+      gif.nsfw || gif.published_at.nil? || gif.new_record?
+    }
+  end
+
+  def all
+    @subreddits.flat_map { |sr|
+      Fetch.new(sr.name, sr.section).process
+    }
   end
 end

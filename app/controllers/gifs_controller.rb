@@ -24,9 +24,7 @@ class GifsController < ApplicationController
   end
 
   def import
-    Gif.create Reddit.new('gifs').front
-    Gif.create Reddit.new('gifs').top
-    Gif.create Reddit.new('AnimalsBeingJerks').top
+    Reddit.new.import
     if params[:admin]
       redirect_to action: :unpublished
     else
