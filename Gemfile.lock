@@ -28,6 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.5)
+    airbrake (3.1.14)
+      builder
+      json
     arel (5.0.0)
     atomic (1.1.14)
     attr_required (0.0.5)
@@ -198,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   coffee-rails
   dotenv-rails
   excon (~> 0.31.0)

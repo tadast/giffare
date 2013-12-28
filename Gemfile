@@ -65,3 +65,4 @@ gem 'nokogiri'
 
 gem 'twitter', '~> 5.4.1'
 gem 'fb_graph'
+gem 'airbrake' # errbit
