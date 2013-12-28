@@ -29,6 +29,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "pry-rails"
   gem "quiet_assets"
+  gem "dotenv-rails"
 end
 
 group :test do
@@ -61,3 +62,5 @@ gem 'kaminari'
 gem 'rest-client'
 gem 'json'
 gem 'nokogiri'
+
+gem 'twitter', '~> 5.4.1'
