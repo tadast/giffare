@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe UnpublishedGifsController do
+  def authorize
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials('admin','secret')
+  end
 
   describe 'create' do
     it 'fails without password' do
@@ -9,13 +12,24 @@ describe UnpublishedGifsController do
     end
 
     it 'is ok with password' do
-      user = 'admin'
-      pw = 'secret'
+      authorize
 
-      request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
       post :create, gif: {title: 'x', url: 'http://google.com'}
 
       response.should be_redirect
+    end
+  end
+
+  describe 'update' do
+    it "does not share on social networks if the checkbox is unticked" do
+      authorize
+      gif = Gif.create!(url: 'http://google.com')
+      expect(Social).to_not receive(:share)
+
+      put :update, id: gif.id, gif: {social_share: "0", url: "http://google.lt"}
+
+      expect(response).to redirect_to(gif_url(gif))
+      expect(Gif.last.url).to eq "http://google.lt"
     end
   end
 
@@ -26,10 +40,8 @@ describe UnpublishedGifsController do
     end
 
     it 'redirects when with password' do
+      authorize
       Gif.stub find: Gif.new
-      user = 'admin'
-      pw = 'secret'
-      request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
       delete :destroy, id: 1
       response.should redirect_to(action: :index)
     end

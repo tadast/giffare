@@ -13,7 +13,7 @@ class UnpublishedGifsController < ApplicationController
 
   def update
     if gif.update_attributes(gif_params)
-      if gif.social_share
+      if gif.social_share.to_i > 1
         Social.share gif
       end
       respond_to do |wants|
