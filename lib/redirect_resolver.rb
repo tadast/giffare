@@ -9,5 +9,7 @@ module RedirectResolver
     else
       response.error!
     end
+  rescue SocketError => e
+    Rails.logger.error e.message
   end
 end

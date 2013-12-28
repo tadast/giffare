@@ -14,9 +14,11 @@ module MinistryOfGif
   private
 
     def resolved_gif_urls
-      original_gif_urls.map { |url|
+      direct, indirect = original_gif_urls.partition{|x| x.match(/\.gif$/)}
+      resolved = indirect.map { |url|
         RedirectResolver.process(url).to_s
-      }
+      }.compact
+      resolved + direct
     end
 
     def original_gif_urls
