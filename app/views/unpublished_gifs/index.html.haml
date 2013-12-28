@@ -5,7 +5,7 @@
       .hidden.done
         Saved
         = link_to "View", gif_path(gif), target: "_blank"
-        = link_to image_tag('tweet.png'), "https://twitter.com/share?text=#{gif.title.gsub(/ /, '+')}&url=#{CGI.escape gif_url(gif)}", class: 'tweet_button', target: :blank
+        = render "social/share", gif: gif
       = render "form", gif: gif, remote: true
       -# = button_to 'Delete', gif, method: :delete, remote: true, confirm: 'U sure?'
   = paginate gifs
