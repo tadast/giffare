@@ -12,6 +12,8 @@ class Gif < ActiveRecord::Base
   scope :ordered, ->{ order('published_at DESC').order('created_at DESC').order('id DESC') }
   scope :in_trash, ->{ where(hidden: true) }
 
+  attr_accessor :social_share
+
   def prev
     Gif.visible.order(:id).where("id > ?", id).first || Gif.visible.order(:id).first
   end

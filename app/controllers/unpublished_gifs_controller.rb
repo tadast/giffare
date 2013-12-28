@@ -13,6 +13,9 @@ class UnpublishedGifsController < ApplicationController
 
   def update
     if gif.update_attributes(gif_params)
+      if gif.social_share
+        Social.share gif
+      end
       respond_to do |wants|
         wants.html { redirect_to gif }
         wants.js { head :ok }
@@ -58,7 +61,7 @@ class UnpublishedGifsController < ApplicationController
 
 private
   def gif_params
-    params.require(:gif).permit(:title, :url, :nsfw, :published_at, :hidden)
+    params.require(:gif).permit(:title, :url, :nsfw, :published_at, :hidden, :social_share)
   end
 
 end
