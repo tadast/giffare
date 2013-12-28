@@ -2,8 +2,9 @@ module Social
   class FaceBook
     delegate :client, to: :auth
 
-    def initialize(content = nil)
-      @content = content
+    def initialize(link = nil, title = nil)
+      @link = link
+      @title = title
     end
 
     def auth
@@ -11,8 +12,13 @@ module Social
     end
 
     def share
-      if @content.present?
-        page.feed!(access_token: giffare_account.access_token, message: @content)
+      if @link.present?
+        puts "FB: ---\n#{@title}, #{@link}\n---"
+        page.feed!(
+          access_token: giffare_account.access_token,
+          message: @title || "New gif",
+          link: @link,
+          description: @title || "New gif")
       end
     end
 

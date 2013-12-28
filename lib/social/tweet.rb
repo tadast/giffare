@@ -12,6 +12,7 @@ module Social
     end
 
     def share
+      puts "Tweeting: ---\n#{@text}\n---"
       CLIENT.update(@text)
     end
   end
