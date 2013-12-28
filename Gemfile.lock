@@ -27,7 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.2)
+    addressable (2.3.5)
     arel (5.0.0)
     atomic (1.1.14)
     builder (3.2.2)
@@ -39,9 +39,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    excon (0.16.4)
+    excon (0.31.0)
     execjs (2.0.2)
     haml (4.0.4)
       tilt
@@ -50,14 +52,6 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
-    heroku (2.32.6)
-      heroku-api (~> 0.3.5)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.7)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.3.5)
-      excon (~> 0.16.1)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (2.0.2)
@@ -71,8 +65,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
-    launchy (2.1.2)
-      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -80,7 +72,6 @@ GEM
     mime-types (1.25.1)
     minitest (5.2.0)
     multi_json (1.8.2)
-    netrc (0.7.7)
     pg (0.13.2)
     polyglot (0.3.3)
     pry (0.9.12.4)
@@ -128,7 +119,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rubyzip (0.9.9)
+    safe_yaml (0.9.7)
     sass (3.2.13)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -156,15 +147,19 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vcr (2.8.0)
+    webmock (1.16.1)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails
+  excon (~> 0.31.0)
   haml (>= 3.0.0)
   haml-rails
-  heroku
   jquery-rails
   jquery-ui-rails (~> 0.4.0)
   json
@@ -179,3 +174,5 @@ DEPENDENCIES
   sass
   sass-rails
   uglifier
+  vcr
+  webmock

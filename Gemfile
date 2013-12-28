@@ -25,14 +25,16 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :development do
-  gem 'heroku'
-end
-
 group :development, :test do
   gem "rspec-rails"
   gem "pry-rails"
   gem "quiet_assets"
+end
+
+group :test do
+  gem 'vcr'
+  gem 'excon', '~> 0.31.0'
+  gem 'webmock'
 end
 
 
