@@ -15,8 +15,10 @@ Preconditions: ruby >= 1.9 and postgresql
     rake db:create db:migrate db:seed
     GIFLIST_ADMIN_PASSWORD='choose_your_own_password' rails server
 
+Create a `.env` file, see `.env.sample` what can be configured
+
 To access admin panel go to /gifs/unpublished
 
 # Running tests
 
-    GIFLIST_ADMIN_PASSWORD='secret' bundle exec rspec
+    bundle exec rspec
