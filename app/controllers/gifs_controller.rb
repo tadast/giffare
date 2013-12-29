@@ -24,7 +24,7 @@ class GifsController < ApplicationController
   end
 
   def import
-    Reddit.new.import
+    Reddit.new.delay.import
     if params[:admin]
       redirect_to action: :unpublished
     else
