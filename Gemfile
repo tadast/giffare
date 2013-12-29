@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.0"
+ruby '2.1.0'
 
 gem 'rails', '~> 4.1.0.beta1'
 
@@ -26,10 +26,10 @@ group :production do
 end
 
 group :development, :test do
-  gem "rspec-rails"
-  gem "pry-rails"
-  gem "quiet_assets"
-  gem "dotenv-rails"
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -38,25 +38,9 @@ group :test do
   gem 'webmock'
 end
 
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-gem "haml", ">= 3.0.0"
-gem "haml-rails"
-gem "jquery-rails"
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 0.4.0'
 gem 'kaminari'
 gem 'rest-client'
@@ -66,3 +50,4 @@ gem 'nokogiri'
 gem 'twitter', '~> 5.4.1'
 gem 'fb_graph'
 gem 'airbrake' # errbit
+gem 'delayed_job_active_record'

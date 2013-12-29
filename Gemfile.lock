@@ -46,6 +46,11 @@ GEM
     coffee-script-source (1.6.3)
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
     descendants_tracker (0.0.3)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
@@ -203,6 +208,7 @@ PLATFORMS
 DEPENDENCIES
   airbrake
   coffee-rails
+  delayed_job_active_record
   dotenv-rails
   excon (~> 0.31.0)
   fb_graph
