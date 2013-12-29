@@ -13,9 +13,7 @@ class UnpublishedGifsController < ApplicationController
 
   def update
     if gif.update_attributes(gif_params)
-      if gif.social_share.to_i > 0
-        Social.share gif
-      end
+      share(gif)
       respond_to do |wants|
         wants.html { redirect_to gif }
         wants.js { head :ok }
@@ -35,6 +33,7 @@ class UnpublishedGifsController < ApplicationController
   def create
     gif = Gif.new gif_params
     if gif.save
+      share(gif)
       redirect_to gif_path(gif)
     else
       render text: gif.errors.full_messages.join
@@ -60,6 +59,12 @@ class UnpublishedGifsController < ApplicationController
   end
 
 private
+  def share(gif)
+    if gif.social_share.to_i > 0
+      Social.share(gif)
+    end
+  end
+
   def gif_params
     params.require(:gif).permit(:title, :url, :nsfw, :published_at, :hidden, :social_share)
   end

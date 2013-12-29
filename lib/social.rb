@@ -4,8 +4,8 @@ module Social
       url = url_for(gif)
       content = "#{gif.title}\n\n#{url}"
       if ENV['SOCIAL_SHARE']
-        Tweet.new(content).share
-        FaceBook.new(url, gif.title).share
+        Tweet.new(content).delay.share
+        FaceBook.new(url, gif.title).delay.share
       else
         puts "Social sharing is off, set SOCIAL_SHARE to true to enable"
       end
