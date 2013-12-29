@@ -31,6 +31,18 @@ describe UnpublishedGifsController do
       expect(response).to redirect_to(gif_url(gif))
       expect(Gif.last.url).to eq "http://google.lt"
     end
+
+    it "shares on social networks if the checkbox is ticked" do
+      authorize
+      gif = Gif.create!(url: 'http://google.com')
+      expect(Social).to receive(:share)
+
+      put :update, id: gif.id, gif: {social_share: "1", url: "http://google.lt"}
+
+      expect(response).to redirect_to(gif_url(gif))
+      expect(Gif.last.url).to eq "http://google.lt"
+    end
+
   end
 
   describe 'destroy' do
