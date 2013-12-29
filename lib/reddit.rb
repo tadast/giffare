@@ -4,6 +4,12 @@ class Reddit
     OpenStruct.new(name: 'gifs', section: '/top'),
     OpenStruct.new(name: 'AnimalsBeingJerks', section: '/top'),
   ]
+
+  def self.import_and_enqueue
+    new.import
+    delay(run_at: 20.minutes.from_now).import_and_enqueue
+  end
+
   def initialize(subreddits: DEFAULTS)
     @subreddits = subreddits
   end
