@@ -18,6 +18,12 @@ class UnpublishedGifsController < ApplicationController
         wants.html { redirect_to gif }
         wants.js { head :ok }
       end
+    elsif gif_params[:hidden.to_i] > 1 # hiding failed due to a duplicate
+      gif.destroy
+      respond_to do |wants|
+        wants.html { redirect_to unpublished_gifs_path }
+        wants.js { head :ok }
+      end
     end
   end
 
