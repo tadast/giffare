@@ -3,6 +3,7 @@ class UnpublishedGifsController < ApplicationController
   include GifsHelper
   http_basic_authenticate_with name: "admin", password: ENV['GIFLIST_ADMIN_PASSWORD']
   respond_to :html, :js, :json, :xml
+  after_action :enable_admin_helpers, only: [:index]
 
   def index
     @gifs = Gif.unpublished.ordered.page(params[:page]).per(20)
@@ -13,7 +14,7 @@ class UnpublishedGifsController < ApplicationController
 
   def update
     if gif.update_attributes(gif_params)
-      share(gif)
+      social_share(gif)
       respond_to do |wants|
         wants.html { redirect_to gif }
         wants.js { head :ok }
@@ -39,7 +40,7 @@ class UnpublishedGifsController < ApplicationController
   def create
     gif = Gif.new gif_params
     if gif.save
-      share(gif)
+      social_share(gif)
       redirect_to gif_path(gif)
     else
       render text: gif.errors.full_messages.join
@@ -48,7 +49,7 @@ class UnpublishedGifsController < ApplicationController
 
   def destroy
     if gif.destroy
-      redirect_to action: :index
+      redirect_to root_url
     else
       head 500
     end
@@ -64,8 +65,16 @@ class UnpublishedGifsController < ApplicationController
     redirect_to :back
   end
 
+  def share
+    Social.share(gif)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js   { head :ok }
+    end
+  end
+
 private
-  def share(gif)
+  def social_share(gif)
     if gif.social_share.to_i > 0
       Social.share(gif)
     end
@@ -73,6 +82,10 @@ private
 
   def gif_params
     params.require(:gif).permit(:title, :url, :nsfw, :published_at, :hidden, :social_share)
+  end
+
+  def enable_admin_helpers
+    cookies.signed[:admin_helpers] = true
   end
 
 end

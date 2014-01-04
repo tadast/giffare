@@ -31,4 +31,10 @@ class GifsController < ApplicationController
       redirect_to root_url
     end
   end
+
+private
+  def admin_helpers?
+    cookies.signed[:admin_helpers] == true
+  end
+  helper_method :admin_helpers?
 end

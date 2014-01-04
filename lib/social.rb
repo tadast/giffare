@@ -4,8 +4,10 @@ module Social
       url = url_for(gif)
       content = "#{gif.title}\n\n#{url}"
       if ENV['SOCIAL_SHARE']
+        return if gif.shared?
         Tweet.new(content).delay.share
         FaceBook.new(url, gif.title).delay.share
+        gif.update_column(:shared, true)
       else
         puts "Social sharing is off, set SOCIAL_SHARE to true to enable"
       end

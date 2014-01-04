@@ -19,9 +19,9 @@
       = f.check_box :nsfw
       Adult, porn, NSFW...
     %br
-    = label_tag do
+    = label_tag nil, class: 'destructive_action' do
       = f.check_box :hidden
-      Delete
+      Send to trash
     %br
     %br
     = label_tag do

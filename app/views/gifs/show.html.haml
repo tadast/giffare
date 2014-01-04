@@ -7,6 +7,7 @@
       %h2= gif.title
     .social
       = render 'social/share', gif: gif
+      = render 'admin_convenience_actions', gif: gif
     %nav.show
       = link_to "«", gif_path(@prev_gif), rel: 'prev', class: 'prev', title: 'Previous'
       = link_to "↻", random_gifs_path, class: 'random', title: 'Random'

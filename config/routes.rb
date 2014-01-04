@@ -9,6 +9,9 @@ Listofgifs::Application.routes.draw do
   end
 
   resources :unpublished_gifs do
+    member do
+      get :share
+    end
     collection do
       get :nsfw
       delete :empty_trash

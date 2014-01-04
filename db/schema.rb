@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229180542) do
+ActiveRecord::Schema.define(version: 20140104113159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20131229180542) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.boolean  "hidden"
+    t.boolean  "shared",       default: false
   end
 
   add_index "gifs", ["url"], name: "index_gifs_on_url", unique: true, using: :btree

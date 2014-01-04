@@ -1,0 +1,8 @@
+- if admin_helpers?
+  %p
+    Admin actions:
+    = link_to "Edit", edit_unpublished_gif_path(gif)
+    \|
+    = link_to "Social Share", share_unpublished_gif_path(gif)
+    \|
+    = link_to "Delete", unpublished_gif_path(gif), method: :delete, data: { confirm: "Are you sure?" }, class: "destructive_action"
