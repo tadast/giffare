@@ -3,6 +3,8 @@ class Reddit
     OpenStruct.new(name: 'gifs', section: ''),
     OpenStruct.new(name: 'gifs', section: '/top'),
     OpenStruct.new(name: 'AnimalsBeingJerks', section: '/top'),
+    OpenStruct.new(name: 'funny', strict: true),
+    OpenStruct.new(name: 'funny', section: '/top', strict: true),
   ]
 
   def self.import_and_enqueue
@@ -49,7 +51,9 @@ private
 
   def all
     @subreddits.flat_map { |sr|
-      Fetch.new(sr.name, sr.section).process
+      f = Fetch.new(sr.name, sr.section).process
+      f.select!{ |h| h['url'].match(/\.gif$/) } if sr.strict
+      f
     }
   end
 end
