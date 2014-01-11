@@ -38,7 +38,7 @@ private
   end
 
   def rejectable?
-    rh['url'].match(/youtube|liveleak/) || rh['url'].match(/jpg$/)  || rh['url'].match(/png$/)
+    rh['url'].match(/youtu|liveleak/) || rh['url'].match(/jpg$/)  || rh['url'].match(/png$/)
   end
 
   def rh
