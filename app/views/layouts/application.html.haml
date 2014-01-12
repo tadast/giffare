@@ -12,6 +12,15 @@
     %meta{name: "viewport", content:  "width = device-width, height = device-height, user-scalable = yes" }
     - if @gif
       %meta{property: "og:image", content: @gif.url}
+
+      %link{href: @gif.url, rel: "image_src"}
+      %meta{content: @gif.title, name: "twitter:title"}
+      %meta{content: "photo", name: "twitter:card"}
+      %meta{content: @gif.url, name: "twitter:image"}
+      %meta{content: "giffare.com", name: "twitter:domain"}
+      %meta{content: "@gifgiraffe", name: "twitter:site"}
+      / %meta{content: "320", name: "twitter:image:width"}
+      / %meta{content: "210", name: "twitter:image:height"}
   %body
     = render 'social/facebook_integration'
     #main_header
