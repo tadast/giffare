@@ -1,5 +1,8 @@
 <%- if gifs.size > 0 %>
   $("#gifs").append("<%= escape_javascript(render(gifs)) %>");
+  <%- if rand < 0.3 %>
+    $("#gifs").append("<%= escape_javascript(render('social_stripe')) %>");
+  <%- end %>
 <%- else %>
   $("#no_moar").show()
 <%- end %>
