@@ -31,24 +31,16 @@ class Reddit
   end
 
   def share_best
-    shareable = persisted_sharable_gifs.select{ |gif|
-      gif.url.in? best_urls
-    }
+    shareable = Gif.where(url: best_urls, shared: false, nsfw: nil).where.not(published_at: nil)
     Social.share(shareable)
   end
 
 private
 
   def best_urls
-    @best_urls ||= all.select{ |h|
-      h["score"].to_i >= 1000
-    }.map{ |h| h['url'] }
-  end
-
-  def persisted_sharable_gifs
-    persist.reject{ |gif|
-      gif.nsfw || gif.published_at.nil? || gif.new_record?
-    }
+    @best_urls ||= all.sort_by{ |h| h["score"].to_i }
+                      .last(5)
+                      .map{ |h| h['url'] }
   end
 
   def all
