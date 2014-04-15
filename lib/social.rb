@@ -1,6 +1,5 @@
 module Social
   def self.share(gifs)
-    puts gifs.size
     Array(gifs).each_with_index do |gif, idx|
       url = url_for(gif)
       content = "#{gif.title}\n\n#{url}"
