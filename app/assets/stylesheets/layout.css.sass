@@ -2,20 +2,21 @@ $device-width-threshold: 480px
 $width-threshold: 800px
 
 #main_header
-  padding: 20px 5%
+  padding: 4px 5%
 
 .content
   width: 95%
   margin: 0 auto
-  max-width: 1150px
+  max-width: 960px
 
 .random_button
   float: right
-  margin-top: 8px
+  margin-top: 11px
 
 .fb-comments
   padding: 20px 3%
   width: 100%
+  text-align: center
 
 .fb-like
   display: inline-block
@@ -30,11 +31,13 @@ $width-threshold: 800px
 
 nav.show
   width: 100%
+  margin-top: 2em
   a
-    padding: 0.25em 0
+    vertical-align: middle
+    line-height: 2em
     margin: 0.5em 1%
     display: inline-block
-    width: 30%
+    min-width: 30px
     text-align: center
     border-radius: 5px
     &:first-child
@@ -57,16 +60,18 @@ form
     width: 728px
     margin: auto
 
+.gif_body, .gif_secondary
+  width: 100%
+  float: none
+  text-align: center
+  margin-left: auto
+  margin-right: auto
 @media only screen and (max-device-width: #{$device-width-threshold}), screen and (max-width: #{$width-threshold})
   #content
     width: 90%
     margin: 0 5%
-  .gif_body, .gif_secondary
-    width: 100%
-    float: none
-    text-align: center
-    margin-left: auto
-    margin-right: auto
+  nav.show .label
+    display: none
 
 @media only screen and (max-width: 600px)
   #main_header
