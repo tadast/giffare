@@ -1,7 +1,7 @@
 = render "shared/ad"
 .page.clearfix[gif]
   %article.gif_body
-    %h2= gif.title.capitalize
+    %h2= gif.title.to_s.capitalize
     = image_tag gif.url
   .gif_secondary
     .social
