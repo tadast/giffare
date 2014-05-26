@@ -11,6 +11,7 @@ class Gif < ActiveRecord::Base
   scope :random, ->{ order('random()') }
   scope :ordered, ->{ order('published_at DESC').order('created_at DESC').order('id DESC') }
   scope :in_trash, ->{ where(hidden: true) }
+  scope :not_shared, ->{ where.not(shared: true) }
 
   attr_accessor :social_share
 
