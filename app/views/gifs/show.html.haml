@@ -6,7 +6,7 @@
   .gif_secondary
     .social
       = render 'social/share', gif: gif
-      = render 'admin_convenience_actions', gif: gif
+      = render 'gifs/admin_convenience_actions', gif: gif
     %nav.show
       = link_to gif_path(@prev_gif), rel: 'prev', class: 'prev big_button', title: 'Previous' do
         = "«"

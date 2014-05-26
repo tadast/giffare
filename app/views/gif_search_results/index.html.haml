@@ -1,0 +1,5 @@
+#gif_search
+  .user_message
+    = "#{pluralize(gifs.to_a.size, 'search result')} for '#{params[:q]}'"
+
+= render gifs

@@ -8,6 +8,7 @@ gem 'rails', '~> 4.1.0.beta1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'textacular'
 
 
 # Gems used only for assets and not required

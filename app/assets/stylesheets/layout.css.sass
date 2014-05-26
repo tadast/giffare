@@ -9,9 +9,12 @@ $width-threshold: 800px
   margin: 0 auto
   max-width: 960px
 
-.random_button
+.search_form
   float: right
-  margin-top: 11px
+  .search_field
+    padding: 5px
+    border-radius: 3px
+    border: 1px solid #ddd
 
 .fb-comments
   padding: 20px 3%
@@ -27,7 +30,8 @@ $width-threshold: 800px
 
 .user_message
   padding: 30px
-  display: none
+  &.for_later
+    display: none
 
 nav.show
   width: 100%
@@ -79,7 +83,7 @@ form
     h1
       font-size: 12px
       text-align: center
-  .random_button
+  .search_form
     display: none
 
 .social_stripe

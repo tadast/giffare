@@ -19,6 +19,8 @@ Listofgifs::Application.routes.draw do
     end
   end
 
+  resources :gif_search_results, only: :index
+
   get '/sitemap', to: 'sitemap#index', defaults: { format: 'xml' }
 
   get '/channel.html' => proc {

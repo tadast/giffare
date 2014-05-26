@@ -25,15 +25,17 @@
     = render 'social/facebook_integration'
     #main_header
       .content
-        .random_button
-          = link_to "I'm feeling lucky!", random_gifs_path, class: 'big_button'
+        .search_form
+          = form_tag gif_search_results_path, method: :get do
+            = text_field_tag :q, params[:q], placeholder: "e.g. cats", class: 'search_field'
+            = submit_tag 'Find', class: 'big_button'
         %h1
           = link_to "Giffare.com", root_url
     .content
       = yield
-      #loading_indicator.user_message
+      #loading_indicator.user_message.for_later
         Loading more awesome gifs...
-      #no_moar.user_message
+      #no_moar.user_message.for_later
         IMPRESSIVE: You have seen all the gifs now!
         = link_to "Giffare on twitter", 'http://twitter.com/gifgiraffe'
 
