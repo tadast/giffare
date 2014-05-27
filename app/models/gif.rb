@@ -16,7 +16,7 @@ class Gif < ActiveRecord::Base
   attr_accessor :social_share
 
   def self.search(query)
-    Gif.fuzzy_search(title: query)
+    Gif.visible.fuzzy_search(title: query)
   end
 
   def prev
