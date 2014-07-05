@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.imgur.com/3//
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Client-ID 2c27e1e48ed8218
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sat, 05 Jul 2014 19:23:06 GMT
+      Server:
+      - cat factory 1.0
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Content-Length:
+      - '2414'
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-iad2126-IAD, cache-lcy1135-LCY
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Accept, X-Mashape-Authorization
+      Set-Cookie:
+      - IMGURSESSION=n2090fa754gil0bimc3qe9ois1; path=/; domain=.imgur.com
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html
+        lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n    <title>    imgur:
+        the simple 404 page</title>\n    <meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\"
+        />\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n    <meta
+        name=\"keywords\" content=\"images, funny pictures, image host, image upload,
+        image sharing, image resize\" />\n    <meta name=\"description\" content=\"The
+        most viral images on the internet, curated in real time by a dedicated community
+        through commenting, voting and sharing.\" />\n    <meta name=\"copyright\"
+        content=\"Copyright 2014 Imgur, Inc.\" />\n    <meta http-equiv=\"X-UA-Compatible\"
+        content=\"IE=Edge;\" />\n    \n    <link rel=\"alternate\" type=\"application/rss+xml\"
+        title=\"Imgur Gallery\" href=\"http://feeds.feedburner.com/ImgurGallery?format=xml\"
+        />\n    \n        <link rel=\"stylesheet\" type=\"text/css\" href=\"https://s.imgur.com/min/404.css?1404513378\"
+        />\n            <!--[if IE 9]><link rel=\"stylesheet\" href=\"//imgur.com/include/css/ie-sucks.css?0\"
+        type=\"text/css\" /><![endif]-->\n    \n    <link rel=\"canonical\" href=\"http://imgur.com/3//\"
+        />\n    <meta property=\"og:site_name\" content=\"Imgur\" />\n    <meta property=\"og:url\"
+        content=\"http://imgur.com/3//\" />\n    <meta property=\"fb:admins\" content=\"12331492,12301369\"
+        />\n    <meta name=\"twitter:site\" content=\"@imgur\"/>\n    <meta name=\"twitter:domain\"
+        content=\"imgur.com\">\n    <meta name=\"twitter:app:id:iphone\" content=\"639881495\"
+        />\n    <meta name=\"twitter:app:id:ipad\" content=\"639881495\" />\n    <meta
+        name=\"twitter:app:id:googleplay\" content=\"com.imgur.mobile\" />\n    \n
+        \   \n</head>\n<body>\n    \n        <noscript>\n            <iframe src=\"//www.googletagmanager.com/ns.html?id=GTM-W9LTJC\"
+        height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n
+        \       </noscript>\n        <script type=\"text/javascript\">\n            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new
+        Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9LTJC');\n
+        \       </script>\n    \n\n    \n\n    \n\n    \n\n            <div class=\"nodisplay\">\n
+        \           Imgur is home to the web's most popular image content, curated
+        in real time by a dedicated community through commenting, voting and sharing.\n
+        \       </div>\n    \n\n        <div id=\"hallway\">\n        <div class=\"container\">\n
+        \           <div id=\"cat1\" class=\"painting\">\n                <img src=\"//s.imgur.com/images/404/cat1weyes.png\">\n
+        \               <div class=\"eye-container\">\n                    <div class=\"eye
+        left\">\n                        <div class=\"pupil\"></div>\n                    </div>\n
+        \                   <div class=\"eye right\">\n                        <div
+        class=\"pupil\"></div>\n                    </div>\n                </div>\n
+        \           </div>\n            <div id=\"cat2\" class=\"painting\">\n                <img
+        src=\"//s.imgur.com/images/404/cat2weyes.png\">\n                <div class=\"eye-container\">\n
+        \                   <div class=\"eye\">\n                        <div class=\"pupil\"></div>\n
+        \                   </div>\n                </div>\n            </div>\n            <div
+        id=\"giraffe\" class=\"painting\">\n                <img src=\"//s.imgur.com/images/404/giraffeweyes.png\">\n
+        \               <div class=\"eye-container\">\n                    <div class=\"eye
+        left\">\n                        <div class=\"pupil\"></div>\n                    </div>\n
+        \                   <div class=\"eye right\">\n                        <div
+        class=\"pupil\"></div>\n                    </div>\n                </div>\n
+        \               <img class=\"monocle\" src=\"//s.imgur.com/images/404/monocle.png\"
+        />\n            </div>\n            <div id=\"cat3\" class=\"painting\">\n
+        \               <img src=\"//s.imgur.com/images/404/cat3weyes.png\">\n                <div
+        class=\"eye-container\">\n                    <div class=\"eye left\">\n                        <div
+        class=\"pupil\"></div>\n                    </div>\n                    <div
+        class=\"eye right\">\n                        <div class=\"pupil\"></div>\n
+        \                   </div>\n                </div>\n            </div>\n            <div
+        id=\"cat4\" class=\"painting\">\n                <img src=\"//s.imgur.com/images/404/cat4weyes.png\">\n
+        \               <div class=\"eye-container\">\n                    <div class=\"eye
+        left\">\n                        <div class=\"pupil\"></div>\n                    </div>\n
+        \                   <div class=\"eye right\">\n                        <div
+        class=\"pupil\"></div>\n                    </div>\n                </div>\n
+        \           </div>\n        </div>\n    </div>\n    <div class=\"footer textbox\">\n
+        \       <h1>Zoinks! You've taken a wrong turn.</h1>\n        <p>Let's split
+        up, gang. If you're looking for an image, it's probably been deleted or may
+        not have existed at all.</p>\n        <p>If you are looking for groovy images,
+        <a href=\"//imgur.com\">visit our gallery!</a></p>\n        <a href=\"//imgur.com\"
+        class=\"footer-logo\"><img src=\"//s.imgur.com/images/imgurlogo-header.png\"></a>\n
+        \   </div>\n    \n\n    \n\n    \n\n    \n\n    \n\n        <script type=\"text/javascript\"
+        src=\"https://s.imgur.com/min/404.js?1404513378\"></script>\n    <script type=\"text/javascript\">\n
+        \       \n            var e404 = E404.getInstance();\n            e404.generalInit();\n
+        \       \n    </script>\n\n        \n    \n\n            <script type=\"text/javascript\">\n
+        \           var _gaq = _gaq || [];\n            _gaq.push(['_setAccount',
+        'UA-6671908-2']);\n            _gaq.push(['_setDomainName', 'none']);\n            _gaq.push(['_trackPageview']);\n
+        \           _gaq.push(['_trackPageLoadTime']);\n\n            \n\n            Imgur.Util.jafoFireLocalStor()\n
+        \           Imgur.Util.jafoBindByAttrib();\n\n            \n\n            if(document.location.protocol
+        === 'https:') {\n                _gaq.push(['_trackEvent', 'feature', 'secure_connection']);\n
+        \           }\n\n                            _gaq.push(['_trackEvent', 'ads',
+        'pages_with_ads', 'unsafe']);\n            \n\n            (function() {\n
+        \             var ga = document.createElement('script'); ga.type = 'text/javascript';
+        ga.async = true;\n              ga.src = ('https:' == document.location.protocol
+        ? 'https://ssl' : '//www') + '.google-analytics.com/ga.js';\n              var
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\n            })();\n        </script>\n\n        <script type='text/javascript'>\n
+        \           var _qevents = _qevents || [];\n            (function() {\n            var
+        elem = document.createElement('script');\n            elem.src = (document.location.protocol
+        == \"https:\" ? \"https://secure\" : \"//edge\") + \".quantserve.com/quant.js\";\n
+        \           elem.async = true;\n            elem.type = \"text/javascript\";\n
+        \           var scpt = document.getElementsByTagName('script')[0];\n            scpt.parentNode.insertBefore(elem,
+        scpt);\n            })();\n\n            _qevents.push({\n                qacct:\"p-f8oruOqDFlMeI\"\n
+        \           });\n        </script>\n\n        <noscript>\n            <div
+        class=\"nodisplay\">\n                <img src=\"//pixel.quantserve.com/pixel/p-f8oruOqDFlMeI.gif\"
+        border=\"0\" height=\"1\" width=\"1\" alt=\"Quantcast\"/>\n            </div>\n
+        \       </noscript>\n\n        \n\n        \n    \n\n    <script type='text/javascript'>\n
+        \       \n        (function(){\n            try{\n                var msg
+        = '\\n      _\\n     (_)\\n      _ _ __ ___   __ _ _   _ _ __\\n     | | \\'_
+        ` _ \\\\ / _` | | | | \\'__|\\n     | | | | | | | (_| | |_| | |\\n     |_|_|
+        |_| |_|\\\\__, |\\\\__,_|_|\\n                   __/ |\\n                  |___/\\n';\n
+        \               msg += '========================================\\nYou opened
+        the console! Know some code,\\ndo you? Want to work for one of the best\\nstartups
+        around? http://imgur.com/jobs\\n========================================\\n';\n
+        \               console.log(msg);\n            }catch(e){}\n        })()\n
+        \       \n    </script>\n\n    \n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Sat, 05 Jul 2014 19:23:06 GMT
+recorded_with: VCR 2.8.0

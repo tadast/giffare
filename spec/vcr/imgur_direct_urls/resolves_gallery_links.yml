@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.imgur.com/3/gallery/40NpN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Client-ID 2c27e1e48ed8218
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2014 19:23:05 GMT
+      Server:
+      - cat factory 1.0
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - max-age=60, s-maxage=60, public, must-revalidate
+      Content-Length:
+      - '511'
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '28'
+      X-Served-By:
+      - cache-iad2133-IAD, cache-lcy1124-LCY
+      X-Cache:
+      - HIT, MISS
+      X-Cache-Hits:
+      - 1, 0
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Accept, X-Mashape-Authorization
+    body:
+      encoding: UTF-8
+      string: "{\"data\":{\"id\":\"40NpN\",\"title\":\"...\",\"description\":null,\"datetime\":1404533123,\"cover\":\"JOCymfx\",\"cover_width\":500,\"cover_height\":281,\"account_url\":\"Iwastryingtomakeacreavtivenamebutnah\",\"account_id\":7911091,\"privacy\":\"public\",\"layout\":\"blog\",\"views\":238244,\"link\":\"http:\\/\\/imgur.com\\/a\\/40NpN\",\"ups\":6183,\"downs\":204,\"score\":5979,\"is_album\":true,\"vote\":null,\"favorite\":false,\"nsfw\":false,\"section\":\"gameofthrones\",\"images_count\":3,\"images\":[{\"id\":\"JOCymfx\",\"title\":null,\"description\":null,\"datetime\":1404533122,\"type\":\"image\\/png\",\"animated\":false,\"width\":500,\"height\":281,\"size\":214502,\"views\":0,\"bandwidth\":0,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/JOCymfx.png\"},{\"id\":\"u0sWGjK\",\"title\":null,\"description\":null,\"datetime\":1404533122,\"type\":\"image\\/png\",\"animated\":false,\"width\":500,\"height\":278,\"size\":212175,\"views\":0,\"bandwidth\":0,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/u0sWGjK.png\"},{\"id\":\"1cj1Of1\",\"title\":null,\"description\":\"For
+        getting to the Front Page: http:\\/\\/i.imgur.com\\/eRagOx6.gif\",\"datetime\":1404533123,\"type\":\"image\\/png\",\"animated\":false,\"width\":500,\"height\":281,\"size\":226848,\"views\":0,\"bandwidth\":0,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/1cj1Of1.png\"}]},\"success\":true,\"status\":200}"
+    http_version: 
+  recorded_at: Sat, 05 Jul 2014 19:23:05 GMT
+recorded_with: VCR 2.8.0

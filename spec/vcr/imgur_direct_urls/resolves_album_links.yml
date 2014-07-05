@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.imgur.com/3/album/gYZp4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Client-ID 2c27e1e48ed8218
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2014 19:23:06 GMT
+      Server:
+      - cat factory 1.0
+      Content-Type:
+      - application/json
+      X-Ratelimit-Clientlimit:
+      - '12500'
+      X-Ratelimit-Clientremaining:
+      - '12499'
+      X-Ratelimit-Userlimit:
+      - '500'
+      X-Ratelimit-Userremaining:
+      - '498'
+      X-Ratelimit-Userreset:
+      - '1404588659'
+      Cache-Control:
+      - max-age=60, s-maxage=60, public, must-revalidate
+      Content-Length:
+      - '525'
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-iad2126-IAD, cache-lcy1123-LCY
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Accept, X-Mashape-Authorization
+    body:
+      encoding: UTF-8
+      string: "{\"data\":{\"id\":\"gYZp4\",\"title\":null,\"description\":null,\"datetime\":1404554449,\"cover\":\"q7f0zNh\",\"cover_width\":864,\"cover_height\":496,\"account_url\":null,\"privacy\":\"public\",\"layout\":\"horizontal\",\"views\":592,\"link\":\"http:\\/\\/imgur.com\\/a\\/gYZp4\",\"favorite\":false,\"nsfw\":false,\"section\":\"Cyberpunk\",\"images_count\":5,\"images\":[{\"id\":\"q7f0zNh\",\"title\":null,\"description\":null,\"datetime\":1404554449,\"type\":\"image\\/gif\",\"animated\":true,\"width\":864,\"height\":496,\"size\":78734,\"views\":1073,\"bandwidth\":84481582,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/q7f0zNh.gif\"},{\"id\":\"y0lEyeH\",\"title\":null,\"description\":null,\"datetime\":1404554468,\"type\":\"image\\/gif\",\"animated\":false,\"width\":470,\"height\":542,\"size\":50767,\"views\":941,\"bandwidth\":47771747,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/y0lEyeH.gif\"},{\"id\":\"fy7liyk\",\"title\":null,\"description\":null,\"datetime\":1404554469,\"type\":\"image\\/gif\",\"animated\":true,\"width\":1536,\"height\":704,\"size\":665214,\"views\":924,\"bandwidth\":614657736,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/fy7liyk.gif\"},{\"id\":\"KhB46eF\",\"title\":null,\"description\":null,\"datetime\":1404554470,\"type\":\"image\\/gif\",\"animated\":true,\"width\":768,\"height\":368,\"size\":413253,\"views\":1081,\"bandwidth\":446726493,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/KhB46eF.gif\"},{\"id\":\"0TUJIHT\",\"title\":null,\"description\":null,\"datetime\":1404554471,\"type\":\"image\\/gif\",\"animated\":true,\"width\":752,\"height\":256,\"size\":839250,\"views\":1245,\"bandwidth\":1044866250,\"favorite\":false,\"nsfw\":null,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/0TUJIHT.gif\"}]},\"success\":true,\"status\":200}"
+    http_version: 
+  recorded_at: Sat, 05 Jul 2014 19:23:06 GMT
+recorded_with: VCR 2.8.0

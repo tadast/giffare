@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.imgur.com/3/image/cp3b6Ra
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Client-ID 2c27e1e48ed8218
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2014 19:23:07 GMT
+      Server:
+      - cat factory 1.0
+      Content-Type:
+      - application/json
+      X-Ratelimit-Clientlimit:
+      - '12500'
+      X-Ratelimit-Clientremaining:
+      - '12498'
+      X-Ratelimit-Userlimit:
+      - '500'
+      X-Ratelimit-Userremaining:
+      - '497'
+      X-Ratelimit-Userreset:
+      - '1404588659'
+      Cache-Control:
+      - max-age=60, s-maxage=60, public, must-revalidate
+      Content-Length:
+      - '227'
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-iad2129-IAD, cache-lcy1131-LCY
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, Accept, X-Mashape-Authorization
+    body:
+      encoding: UTF-8
+      string: "{\"data\":{\"id\":\"cp3b6Ra\",\"title\":null,\"description\":null,\"datetime\":1404539531,\"type\":\"image\\/gif\",\"animated\":true,\"width\":298,\"height\":201,\"size\":2092159,\"views\":5605,\"bandwidth\":11726551195,\"favorite\":false,\"nsfw\":false,\"section\":null,\"link\":\"http:\\/\\/i.imgur.com\\/cp3b6Ra.gif\"},\"success\":true,\"status\":200}"
+    http_version: 
+  recorded_at: Sat, 05 Jul 2014 19:23:07 GMT
+recorded_with: VCR 2.8.0
