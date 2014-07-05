@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.0'
 
-gem 'rails', '~> 4.1.0.beta1'
+gem 'rails', '~> 4.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,6 +21,21 @@ gem 'coffee-rails'
 # gem 'therubyracer', :platform => :ruby
 
 gem 'uglifier'
+gem 'spring'
+
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 0.4.0'
+gem 'kaminari'
+gem 'rest-client'
+gem 'json'
+gem 'nokogiri'
+
+gem 'twitter', '~> 5.4.1'
+gem 'fb_graph'
+gem 'airbrake' # errbit
+gem 'delayed_job_active_record'
 
 group :production do
   gem 'rails_12factor'
@@ -38,17 +53,3 @@ group :test do
   gem 'excon', '~> 0.31.0'
   gem 'webmock'
 end
-
-gem 'haml', '>= 3.0.0'
-gem 'haml-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails', '~> 0.4.0'
-gem 'kaminari'
-gem 'rest-client'
-gem 'json'
-gem 'nokogiri'
-
-gem 'twitter', '~> 5.4.1'
-gem 'fb_graph'
-gem 'airbrake' # errbit
-gem 'delayed_job_active_record'
