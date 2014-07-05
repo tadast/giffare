@@ -5,8 +5,11 @@ class ImgurDirect
     @url = url.to_s.strip
   end
 
-  def urls
-    return [] unless resolvable?
+  def urls(fall_back_to_original = true)
+    if !resolvable?
+      return fall_back_to_original ? [url] : []
+    end
+
     strategy, image_id = strategy_and_id
     if strategy == 'direct_link'
       [url]

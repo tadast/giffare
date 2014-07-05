@@ -40,8 +40,12 @@ describe ImgurDirect do
       expect(described_class.new('http://imgur.com/cp3b6Ra').urls).to eq %w(http://i.imgur.com/cp3b6Ra.gif)
     end
 
-    it "is empty for random links" do
-      expect(described_class.new('http://google.com').urls).to eq([])
+    it "is empty for for non-imgur with no fallback" do
+      expect(described_class.new('http://google.com').urls(false)).to eq([])
+    end
+
+    it "is the original link for non-imgur links with fallback" do
+      expect(described_class.new('http://google.com').urls(:fallback_plz)).to eq %w[http://google.com]
     end
   end
 
