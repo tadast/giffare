@@ -6,6 +6,10 @@ class Reddit::AttributeFilter
   end
 
   def useful
-    @data.map{ |p| p['data'].slice(*USEFUL_PARAMS) }
+    @data.map do |p|
+      params = p['data'].slice(*USEFUL_PARAMS)
+      params['url'] = ImgurDirect.new(params['url']).urls.first
+      params
+    end
   end
 end
