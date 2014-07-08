@@ -7,6 +7,7 @@ class Reddit
     OpenStruct.new(name: 'funny', section: '/top', strict: true),
     OpenStruct.new(name: 'Unexpected', strict: true),
     OpenStruct.new(name: 'Unexpected', section: '/top', strict: true),
+    OpenStruct.new(name: 'WastedGifs', section: '/top', strict: true),
   ]
 
   def self.import_and_enqueue
