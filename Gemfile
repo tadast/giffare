@@ -37,10 +37,6 @@ gem 'fb_graph'
 gem 'airbrake' # errbit
 gem 'delayed_job_active_record'
 
-group :production do
-  gem 'rails_12factor'
-end
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
