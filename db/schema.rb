@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20140526143908) do
     t.string   "title"
     t.datetime "published_at"
     t.boolean  "nsfw",         default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "hidden"
     t.boolean  "shared",       default: false
   end

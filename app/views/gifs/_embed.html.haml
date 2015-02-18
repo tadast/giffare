@@ -1,0 +1,7 @@
+- if gif.url.to_s.match(/imgur\.com\/\w+\.gif$/)
+  %video{preload: "auto", autoplay: "autoplay", muted: "muted", loop: "loop" }
+    %source{src: gif.url.gsub('gif', 'mp4'), type: "video/mp4"}
+    %source{src: gif.url.gsub('gif', 'webm'), type: "video/webm"}
+- else
+  = link_to gif_path(gif) do
+    = image_tag gif.url, alt: gif.title

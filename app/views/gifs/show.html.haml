@@ -2,7 +2,7 @@
 .page.clearfix[gif]
   %article.gif_body
     %h2= gif.title.to_s.capitalize
-    = image_tag gif.url
+    = render 'embed', gif: gif
   .gif_secondary
     .social
       = render 'social/share', gif: gif
