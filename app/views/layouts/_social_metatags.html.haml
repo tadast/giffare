@@ -6,11 +6,11 @@
 %meta{content: gif_url(gif), property: "og:url"}
 %meta{content: "Giffare", property: "og:site_name"}
 %meta{content: gif.title, property: "og:title"}
-%meta{content: gif.url_for_format('.jpg'), property: "og:image"}
 
 %link{href: gif.url, rel: "image_src"}
 
 - if gif.videoable?
+  %meta{content: gif.url_for_format('.jpg'), property: "og:image"}
   %meta{content: "video.other", property: "og:type"}
   / %meta{content: "", property: "og:image:width"}
   / %meta{content: "", property: "og:image:height"}
@@ -31,5 +31,6 @@
   %meta{content: gif.url_for_format('.jpg'), name: "twitter:image"}
   %meta{content: gif.url_for_format('.jpg'), name: "twitter:image:src"}
 - else
+  %meta{content: gif.url, property: "og:image"}
   %meta{content: gif.url, name: "twitter:image"}
   %meta{content: gif.url, name: "twitter:image:src"}
