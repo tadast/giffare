@@ -2,8 +2,6 @@
 %meta{content: "gifgiraffe", name: "twitter:site"}
 %meta{content: "giffare.com", name: "twitter:domain"}
 %meta{content: gif.title, name: "twitter:title"}
-%meta{content: gif.url_for_format('.jpg'), name: "twitter:image"}
-%meta{content: gif.url_for_format('.jpg'), name: "twitter:image:src"}
 
 %meta{content: gif_url(gif), property: "og:url"}
 %meta{content: "Giffare", property: "og:site_name"}
@@ -30,3 +28,8 @@
   %meta{content: "player", name: "twitter:card"}
   %meta{content: gif.url_for_format(".mp4"), name: "twitter:player:stream"}
   %meta{content: "video/mp4", name: "twitter:player:stream:content_type"}
+  %meta{content: gif.url_for_format('.jpg'), name: "twitter:image"}
+  %meta{content: gif.url_for_format('.jpg'), name: "twitter:image:src"}
+- else
+  %meta{content: gif.url, name: "twitter:image"}
+  %meta{content: gif.url, name: "twitter:image:src"}
