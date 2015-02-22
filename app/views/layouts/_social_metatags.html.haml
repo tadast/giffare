@@ -24,9 +24,9 @@
   / %meta{content: "", property: "og:video:width"}
   / %meta{content: "", property: "og:video:height"}
 
-  / %meta{content: "", name: "twitter:player:width"}
-  / %meta{content: "", name: "twitter:player:height"}
-  %meta{content: gif.url_for_format(".gifv", "?twitter#t"), name: "twitter:player"}
+  %meta{content: "575", name: "twitter:player:width"}
+  %meta{content: "409", name: "twitter:player:height"}
+  %meta{content: gif.url_for_format(".gifv", "?twitter#t").gsub('http://', 'https://'), name: "twitter:player"}
   %meta{content: "player", name: "twitter:card"}
   %meta{content: gif.url_for_format(".mp4"), name: "twitter:player:stream"}
   %meta{content: "video/mp4", name: "twitter:player:stream:content_type"}
