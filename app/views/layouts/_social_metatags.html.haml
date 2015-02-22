@@ -1,0 +1,31 @@
+%meta{content: "gifgiraffe", name: "twitter:site"}
+%meta{content: "giffare.com", name: "twitter:domain"}
+%meta{content: gif.title, name: "twitter:title"}
+%meta{content: gif.url, name: "twitter:image"}
+%meta{content: gif.url, name: "twitter:image:src"}
+
+%meta{content: gif_url(gif), property: "og:url"}
+%meta{content: "Giffare", property: "og:site_name"}
+%meta{content: gif.title, property: "og:title"}
+%meta{content: gif.url, property: "og:image"}
+
+%link{href: gif.url, rel: "image_src"}
+
+- if gif.videoable?
+  %meta{content: "video.other", property: "og:type"}
+  / %meta{content: "", property: "og:image:width"}
+  / %meta{content: "", property: "og:image:height"}
+  %meta{content: "http://s.imgur.com/include/flash/gifplayer.swf?imgur_video=#{gif.url_for_format('.mp4')}&imgur_width=660&imgur_height=370&imgur_url=#{gif.url_for_format('')}", property: "og:video"}
+  %meta{content: "http://s.imgur.com/include/flash/gifplayer.swf?imgur_video=#{gif.url_for_format('.mp4')}&imgur_width=660&imgur_height=370&imgur_url=#{gif.url_for_format('')}".gsub('http://', 'https://'), property: "og:video:secure_url"}
+  %meta{content: "application/x-shockwave-flash", property: "og:video:type"}
+  %meta{content: gif.url_for_format('.mp4'), property: "og:video"}
+  %meta{content: "video/mp4", property: "og:video:type"}
+  / %meta{content: "", property: "og:video:width"}
+  / %meta{content: "", property: "og:video:height"}
+
+  / %meta{content: "", name: "twitter:player:width"}
+  / %meta{content: "", name: "twitter:player:height"}
+  %meta{content: gif.url_for_format(".gifv", "?twitter#t"), name: "twitter:player"}
+  %meta{content: "player", name: "twitter:card"}
+  %meta{content: gif.url_for_format(".mp4"), name: "twitter:player:stream"}
+  %meta{content: "video/mp4", name: "twitter:player:stream:content_type"}
