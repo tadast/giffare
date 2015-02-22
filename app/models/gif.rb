@@ -49,6 +49,15 @@ class Gif < ActiveRecord::Base
     save!
   end
 
+  def videoable?
+    url.to_s.match(/imgur\.com\/\w+\.gif$/)
+  end
+
+  def url_for_format(format, query_params = '')
+    raise "Gif not videoable" unless videoable?
+    url.gsub('.gif', format) + query_params
+  end
+
   def directified_url
     if url.to_s.match(/imgur\.com\/(gallery\/)?\w+$/)
       url.gsub(/gallery\//, '').gsub(/imgur/, 'i.imgur') + '.gif'
