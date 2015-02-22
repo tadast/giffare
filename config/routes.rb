@@ -1,5 +1,7 @@
 Listofgifs::Application.routes.draw do
-  root :to => 'gifs#index'
+  root to: 'gifs#index'
+
+  resource :status, only: :show
   resources :gifs do
     collection do
       get :import
