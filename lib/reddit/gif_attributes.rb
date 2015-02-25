@@ -20,7 +20,7 @@ private
   end
 
   def url
-    url = rh['url']
+    url = rh['url'].gsub(/\.gifv$/, '.gif')
     @no_autopublish = true unless url.match(/\.gif$/)
     url
   end
