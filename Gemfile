@@ -51,6 +51,6 @@ end
 
 group :test do
   gem 'vcr'
-  gem 'excon', '~> 0.31.0'
+  gem 'excon', '~> 0.71.0'
   gem 'webmock'
 end

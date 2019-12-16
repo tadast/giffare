@@ -58,7 +58,7 @@ GEM
       dotenv (= 0.9.0)
     equalizer (0.0.9)
     erubis (2.7.0)
-    excon (0.31.0)
+    excon (0.71.0)
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -215,7 +215,7 @@ DEPENDENCIES
   coffee-rails
   delayed_job_active_record
   dotenv-rails
-  excon (~> 0.31.0)
+  excon (~> 0.71.0)
   fb_graph
   haml (>= 3.0.0)
   haml-rails
